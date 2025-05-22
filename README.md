@@ -21,21 +21,21 @@ Vous trouverez ici un exemple de code moderne, un script de build robuste et tou
 
 ### 1. Cloner ce dépôt
 
-```
+```shell
 git clone https://github.com/valorisa/cpp26-gcc15-wsl2-demo.git
 cd cpp26-gcc15-wsl2-demo
 ```
 
 ### 2. Installer les dépendances de compilation
 
-```
+```shell
 sudo apt update
 sudo apt install -y build-essential git make gawk flex bison libgmp-dev libmpfr-dev libmpc-dev python3 binutils perl libisl-dev libzstd-dev tar gzip bzip2
 ```
 
 ### 3. Télécharger et préparer les sources de GCC 15.1
 
-```
+```shell
 mkdir -p ~/Projets/gcc-15
 cd ~/Projets/gcc-15
 git clone https://gcc.gnu.org/git/gcc.git gcc-15-source
@@ -46,7 +46,7 @@ git checkout releases/gcc-15.1.0
 
 ### 4. Créer un dossier de build séparé
 
-```
+```shell
 cd ~/Projets/gcc-15
 mkdir gcc-15-build
 cd gcc-15-build
@@ -54,38 +54,40 @@ cd gcc-15-build
 
 ### 5. Configurer GCC 15.1
 
-```
+```shell
 ../gcc-15-source/configure --prefix=/opt/gcc-15 --disable-multilib --enable-languages=c,c++ --disable-default-pie
 ```
 
 ### 6. Compiler GCC 15.1 (cela peut prendre du temps)
 
-```
+```shell
 make -j$(($(nproc) - 1))
 ```
 
 ### 7. Installer GCC 15.1
 
-```
+```shell
 sudo make install
 ```
 
 ### 8. Configurer les alternatives pour utiliser GCC 15.1 par défaut
 
-```
+```shell
 sudo update-alternatives --install /usr/bin/gcc gcc /opt/gcc-15/bin/gcc 100
 sudo update-alternatives --install /usr/bin/g++ g++ /opt/gcc-15/bin/g++ 100
 sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 ```
+
 Sélectionnez `/opt/gcc-15/bin/gcc` et `/opt/gcc-15/bin/g++` dans la liste.
 
 ### 9. Vérifier l’installation
 
-```
+```shell
 gcc --version
 g++ --version
 ```
+
 Vous devez voir : `gcc (GCC) 15.1.0`
 
 ---
@@ -98,13 +100,13 @@ Le fichier `test26.cpp` est fourni dans ce dépôt.
 
 ### 2. Compiler avec GCC 15.1 et le standard C++26
 
-```
+```shell
 g++ -std=c++26 -Wno-deprecated-declarations -Wno-deprecated-variadic-comma-omission test26.cpp -o test26
 ```
 
 ### 3. Exécuter le programme
 
-```
+```shell
 ./test26
 ```
 
@@ -116,7 +118,7 @@ g++ -std=c++26 -Wno-deprecated-declarations -Wno-deprecated-variadic-comma-omiss
 
 Lors de la compilation de GCC 15.1, il est possible d’obtenir l’erreur suivante :
 
-```
+```shell
 /usr/bin/ld: /lib/x86_64-linux-gnu/crt1.o: in function `_start':
 (.text+0x1b): undefined reference to `main'
 collect2: error: ld returned 1 exit status
@@ -130,7 +132,8 @@ Cette erreur survient si les variables d’environnement `CFLAGS` ou `LDFLAGS` s
 #### **Solution**
 
 1. **Vérifier et nettoyer l’environnement avant compilation :**
-   ```
+
+   ```shell
    unset CFLAGS
    unset LDFLAGS
    ```
@@ -138,12 +141,14 @@ Cette erreur survient si les variables d’environnement `CFLAGS` ou `LDFLAGS` s
 2. **S’assurer que ces variables ne sont pas définies dans vos fichiers de configuration shell** (`.bashrc`, `.profile`, etc.).
 
 3. **Utiliser uniquement l’option `--disable-default-pie` lors de la configuration de GCC** :
-   ```
+
+   ```shell
    ../gcc-15-source/configure --prefix=/opt/gcc-15 --disable-multilib --enable-languages=c,c++ --disable-default-pie
    ```
 
 4. **Repartir d’un dossier de build propre** :
-   ```
+
+   ```shell
    rm -rf ~/Projets/gcc-15/gcc-15-build
    mkdir ~/Projets/gcc-15/gcc-15-build
    cd ~/Projets/gcc-15/gcc-15-build
@@ -155,7 +160,7 @@ Cette erreur survient si les variables d’environnement `CFLAGS` ou `LDFLAGS` s
 
 Voici un script Bash robuste pour compiler GCC 15.1 sans rencontrer ce problème :
 
-```
+```shell
 #!/bin/bash
 set -e
 
@@ -201,7 +206,8 @@ echo "=== Vérification ==="
 
 - Pour compiler d’autres projets avec GCC 15.1, utilisez simplement `g++` ou `/opt/gcc-15/bin/g++`.
 - Pour revenir à la version précédente de GCC, relancez :
-  ```
+
+  ```shell
   sudo update-alternatives --config gcc
   sudo update-alternatives --config g++
   ```
