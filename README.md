@@ -158,7 +158,7 @@ Cette erreur survient si les variables d’environnement `CFLAGS` ou `LDFLAGS` s
 
 ### 🚀 Script de compilation robuste
 
-Voici un script Bash robuste pour compiler GCC 15.1 sans rencontrer ce problème :
+Voici un script Bash robuste appelé *'build-gcc15-no-pie.sh'* pour compiler GCC 15.1 sans rencontrer ce problème :
 
 ```shell
 #!/bin/bash
