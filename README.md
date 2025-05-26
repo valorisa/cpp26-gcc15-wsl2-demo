@@ -232,7 +232,7 @@ Ce projet est publié sous licence MIT.
 
 Pour toute question ou suggestion, ouvrez une issue sur le dépôt GitHub.  
 
-**Auteur** : [valorisa](https://github.com/valorisa) 
+**Auteur** : [valorisa](https://github.com/valorisa)
 
 ---
 
