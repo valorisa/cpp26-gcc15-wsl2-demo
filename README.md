@@ -4,7 +4,7 @@
 
 ## Présentation
 
-Ce projet a pour objectif de montrer comment compiler et utiliser GCC 15.1 sous Ubuntu 25.04 (WSL2 sur Windows 11 Enterprise) afin de profiter des toutes dernières fonctionnalités du standard C++26.  
+Ce projet a pour objectif de montrer comment compiler et utiliser GCC 15.1 sous Ubuntu 25.04 (via WSL2 sur Windows 11 Enterprise) afin de profiter des toutes dernières fonctionnalités du standard C++26.  
 Vous trouverez ici un exemple de code moderne, un script de build robuste et toutes les commandes nécessaires pour reproduire l’installation et l’utilisation de GCC 15.1 sur votre environnement.
 
 ---
