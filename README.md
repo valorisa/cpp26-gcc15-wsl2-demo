@@ -236,7 +236,7 @@ Pour toute question ou suggestion, ouvrez une issue sur le dépôt GitHub.
 
 ---
 
-## Origine du projet
+## Référence
 
 Guide inspiré de : [how-to-build-and-set-up-gcc-15-1-on-ubuntu](https://medium.com/@xersendo/moving-to-c-26-how-to-build-and-set-up-gcc-15-1-on-ubuntu-f52cc9173fa0)
 ![1_HhSVcgCMDHa4odEKNSNvgQ](https://github.com/user-attachments/assets/5ad67296-74cd-4d1a-afae-289e093f26fc)
