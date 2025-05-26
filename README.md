@@ -230,7 +230,7 @@ Ce projet est publié sous licence MIT.
 
 ## Contact
 
-Pour toute question ou suggestion, ouvrez une issue sur le dépôt GitHub.  
+Pour toute question ou suggestion, ouvrez une issue sur le dépôt GitHub.
 
 **Auteur** : [valorisa](https://github.com/valorisa)
 
