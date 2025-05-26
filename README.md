@@ -232,7 +232,9 @@ Ce projet est publié sous licence MIT.
 
 Pour toute question ou suggestion, ouvrez une issue sur le dépôt GitHub.  
 
-**Auteur** : [valorisa](https://github.com/valorisa)  
+**Auteur** : [valorisa](https://github.com/valorisa) 
 
-Guide inspiré de : https://medium.com/@xersendo/moving-to-c-26-how-to-build-and-set-up-gcc-15-1-on-ubuntu-f52cc9173fa0
+---
+
+Guide inspiré de : [moving-to-c-26-how-to-build-and-set-up-gcc-15-1-on-ubuntu](https://medium.com/@xersendo/moving-to-c-26-how-to-build-and-set-up-gcc-15-1-on-ubuntu-f52cc9173fa0)
 ---
